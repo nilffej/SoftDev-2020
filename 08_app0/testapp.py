@@ -1,3 +1,8 @@
+# Jeff Lin
+# SoftDev PD 9
+# K08 Lemme Flask You Smp'n
+# 2019-09-19
+
 from flask import Flask
 app = Flask(__name__)
 
