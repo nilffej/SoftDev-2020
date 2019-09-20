@@ -10,9 +10,10 @@ def hello_world():
 
 @app.route("/my_foist_template")
 def newpage():
-    return render_template('model.tmplt.html,
+    return render_template('site.html',
     foo = "foooo",
-    collection=coll)
+    collection= coll
+    )
 
 if __name__ == "__main__":
     app.debug = True # Automatically updates project with save file
