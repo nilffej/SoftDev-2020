@@ -16,6 +16,7 @@ def sol():
         total += percent
     del dictionary["Total"]
     rand = random.randint(1,998) * 0.1
+    print(dictionary)
     for key in dictionary.keys():
         if rand <= dictionary[key]:
             return key;
