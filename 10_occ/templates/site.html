@@ -14,10 +14,10 @@
           <th>Occupation</th>
           <th>Percentage</th>
         </tr>
-        {% for item in col1 %}
+        {% for index in lengthnum %}
           <tr>
-            <td>{{item}}</td>
-            <td>{{col2[loop.index0]}}</td>
+            <td>{{col1[index]}}</td>
+            <td>{{col2[index]}}</td>
           </tr>
         {% endfor %}
       </table>
