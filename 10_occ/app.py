@@ -31,7 +31,7 @@ def hello_world():
     print("Main page loaded") # Prints out something on load/reload in console
     return "New test page!"
 
-@app.route("/my_foist_template")
+@app.route("/occupyflaskst")
 def newpage():
     name = sol()
     return render_template('site.html',
