@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,15 +7,16 @@
   </head>
   <body>
     <center>
-      <h2>Team Gold Introduction</h2>
-      <h4>Roster: Jeff Lin & Manfred Tan</h4>
-      Random Occupation: {{ job }} <br>
+      <h2>Occupations in the United States</h2>
+      <h4>Roster: Jeff Lin & Manfred Tan (Team Gold)</h4>
+      Random Occupation: {{ job }} ({{percent}} %)<br><br>
       <table>
         <tr>
           <th>Occupation</th>
           <th>Percentage</th>
         </tr>
-        {% for index in lengthnum %}
+        <!-- for loop to build table using length of lists from python -->
+        {% for index in lengthNum %}
           <tr>
             <td>{{col1[index]}}</td>
             <td>{{col2[index]}}</td>
