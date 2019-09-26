@@ -1,7 +1,7 @@
-#Derek Leung + Jeff Lin [TEAM COCONUT WATER]
-#SoftDev1 PD 9
-#K12
-#2019-09-21
+# Derek Leung + Jeff Lin [TEAM COCONUT WATER]
+# SoftDev1 PD 9
+# K12
+# 2019-09-21
 
 import cgi
 
@@ -21,8 +21,8 @@ def authenticate():
     print(app)                      # Prints out Flask app name
     print(request)                  # Prints out Flask app web address
     print(request.args)             # Prints out dictionary with form information
-    return render_template(
-    'nothing.html',                 # Renders new page template
+    return render_template(         # Renders new page templates
+    'nothing.html',
     myname = request.args["name"]   # Defines myname variable using form dictionary
     )
 
