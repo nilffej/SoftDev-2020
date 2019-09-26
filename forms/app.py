@@ -21,7 +21,11 @@ def authenticate():
     print(app)
     print(request)
     print(request.args)
-    return "HELLO"
+    dictionary = dict(request.args)
+    return render_template(
+    'nothing.html',
+    myname = dictionary["name"]
+    )
 
 if __name__ == "__main__": #RUNS THE APP AT THE END
   app.debug = True
