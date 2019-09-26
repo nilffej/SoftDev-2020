@@ -1,6 +1,6 @@
 #Derek Leung + Jeff Lin [TEAM COCONUT WATER]
-#SoftDev1 pd9
-#K11
+#SoftDev1 Pd9
+#K12
 #2019-09-21
 
 import cgi
@@ -21,10 +21,9 @@ def authenticate():
     print(app)
     print(request)
     print(request.args)
-    dictionary = dict(request.args)
     return render_template(
     'nothing.html',
-    myname = dictionary["name"]
+    myname = request.args["name"]
     )
 
 if __name__ == "__main__": #RUNS THE APP AT THE END
