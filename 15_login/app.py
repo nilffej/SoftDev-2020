@@ -11,21 +11,26 @@ from flask import request
 from flask import redirect
 from flask import url_for
 
-username = "Jeff Lin"
-password = "password"
+username = "Jeff"
+password = "pass"
 current = {}
 app = Flask(__name__)
 @app.route("/")
 def occupyflaskst():
-    return render_template(         # Renders new page template with name form
-    'login.html'
-    )
+    if "name" not in current.keys():
+        return render_template(         # Renders new page template with name form
+            'login.html'
+        )
+    return render_template("homepage.html",
+                            user = current["name"])
 
 @app.route("/auth")
 def authenticate():
     print(app)                      # Prints out Flask app name
     print(request)                  # Prints out Flask app web address
     print(request.args)             # Prints out dictionary with form information
+    if "name" not in request.args or "pass" not in request.args:
+        return
     current["name"] = request.args["name"]
     if request.args["name"] == username and request.args["pass"] == password:
         return redirect(url_for("homepage"))
@@ -35,6 +40,7 @@ def authenticate():
 @app.route("/homepage")
 def homepage():
     print(current)
+    print(request.args)
     return render_template("homepage.html",
                             user = current["name"])
 
@@ -47,6 +53,7 @@ def error():
 @app.route("/red")
 def red():
     print(current)
+    current.clear()
     return redirect(url_for("occupyflaskst"))
 
 if __name__ == "__main__":
