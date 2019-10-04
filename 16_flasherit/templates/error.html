@@ -3,7 +3,11 @@
 
 
 {% block content %}
-<h3>Error: No username/password combination found for {{user}}</h3>
+{% if userp %}
+<h3>Error: Incorrect password entered for {{user}}</h3>
+{% else %}
+<h3>Error: Username not found</h3>
+{% endif %}
 <form action= "/red">
   <input type = "submit" name="sub" value="Retry">
 </form>
