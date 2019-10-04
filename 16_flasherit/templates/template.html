@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Our Website {% block head %}</title>
-    {% endblock %}
+    <title>Our Website {% block head %}{% endblock %}</title>
   </head>
   <body>
     <center>
+      <h2>Our Website - Team RIP Jun Tau</h2>
+
       {% block content %}
-      <p>Hello, we are team RIP Jun Tao!</p>
       {% endblock %}
+      
+      <br><br><br>
       <footer>Made by Jackson Zou and Jeff Lin</footer>
     </center>
   </body>
