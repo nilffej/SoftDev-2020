@@ -12,15 +12,17 @@ DB_FILE="discobandit.db"
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops
 
-#==========================================================
+with open('students.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    c.execute("CREATE TABLE students (name TEXT, age INTEGER, id INTEGER);")
+    for row in reader:
+        c.execute('INSERT INTO students VALUES ("' + row['name'] + '",' + row['age'] + ',' + row['id'] + ');')
 
-# < < < INSERT YOUR POPULATE-THE-DB CODE HERE > > >
-
-
-command = ""          # test SQL stmt in sqlite3 shell, save as string
-c.execute(command)    # run SQL statement
-
-#==========================================================
+with open('courses.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    c.execute("CREATE TABLE courses (name TEXT, age INTEGER, id INTEGER);")
+    for row in reader:
+        c.execute('INSERT INTO students VALUES ("' + row['code'] + '",' + row['mark'] + ',' + row['id'] + ');')
 
 db.commit() #save changes
 db.close()  #close database
