@@ -20,9 +20,9 @@ with open('students.csv') as csvfile:
 
 with open('courses.csv') as csvfile:
     reader = csv.DictReader(csvfile)
-    c.execute("CREATE TABLE courses (name TEXT, age INTEGER, id INTEGER);")
+    c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER);")
     for row in reader:
-        c.execute('INSERT INTO students VALUES ("' + row['code'] + '",' + row['mark'] + ',' + row['id'] + ');')
+        c.execute('INSERT INTO courses VALUES ("' + row['code'] + '",' + row['mark'] + ',' + row['id'] + ');')
 
 db.commit() #save changes
 db.close()  #close database
