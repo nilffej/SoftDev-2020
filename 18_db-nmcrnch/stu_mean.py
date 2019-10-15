@@ -1,4 +1,4 @@
-# Jeff Lin
+# Jeff Lin, Leia Park
 # SoftDev1 PD9
 # K18 -- Average
 # 2019-10-14
@@ -37,6 +37,8 @@ for item in rows:
         dict[item[0]] = (item[1],[item[2]])
     else:
         dict[item[0]][1].append(item[2])
+
+print(dict,"\n")
 
 c.execute("CREATE TABLE stu_mean (name TEXT, id INTEGER, average NUMERIC)")
 for item in dict.keys():
