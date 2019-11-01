@@ -1,0 +1,52 @@
+body {
+   background-color: #666666;
+   font-family: Arial, 'Helvetica Neue';
+ }
+ .heading {
+   background-color: #BEBEBE;
+   padding: 10px;
+   text-align: center;
+   color: #FFFFFF;
+   margin: 0px;
+ }
+ .firstdiv {
+   background-color:#767676;
+   height: 500px;
+   margin: 0px;
+ }
+ .sinclair {
+   background-color: #565656;
+   padding: 15px;
+   text-align: right;
+   color: #75736A;
+   margin: 0px;
+ }
+ .text {
+   width: 85%;
+   float:right;
+ }
+ .navfoo {
+   width: 15%;
+   font-size: 20px;
+   float: left;
+ }
+ .mainfoo {
+   width: 85%;
+   font-size: 30px;
+ }
+ .realfoo {
+   font-weight: bold;
+   padding: 15px;
+ }
+
+ .dis {
+   font-weight: bold;
+   width: 15%;
+   font-size: 20px;
+   float: left;
+   color: #DCDCD8
+ }
+ .distext {
+   padding-left: 15px;
+   padding-right: 15px;
+ }
