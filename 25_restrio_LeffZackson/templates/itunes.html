@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{%block head%}
+ | iTunes Search
+{%endblock%}
+
+{%block content%}
+<h1>iTunes Search</h1>
+<h2>Linkin Park</h2>
+<table width="80%" style="table-layout: fixed;">
+  <tr>
+  {% for i in range(5) %}
+    <td>
+      <b>{{ tracks[loop.index0]['name'] }}</b><br><br>
+      <img src="{{ tracks[loop.index0]['albumcover'] }}" alt="tracks[loop.index0]['name']"><br><br>
+      <b>Album:</b> {{ tracks[loop.index0]['album'] }}<br>
+      <b>Price:</b> {{ tracks[loop.index0]['price'] }}
+    </td>
+  {% endfor %}
+  </tr>
+</table>
+{%endblock%}
