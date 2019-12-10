@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+
+{%block head%}
+ | Dungeons and Dragons
+{%endblock%}
+
+{%block content%}
+  <h1>Dungeons and Dragons api</h1>
+  <p> Class Name: {{name}} </p>
+  <p> Health: {{health}} </p>
+  <br>
+  <p> List of Abilities </p>
+  {% for i in abilities %}
+    <p> {{i['name']}}
+  {% endfor %}
+{%endblock%}

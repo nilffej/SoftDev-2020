@@ -36,6 +36,18 @@ def itunes():
             albumcover = item['artworkUrl100'], album = item['collectionName'], price = item['trackPrice']))
     return render_template("itunes.html", tracks = songlist)
 
+@app.route("/dungeonsanddragons")
+def dnd():
+    u = urllib.request.urlopen("http://www.dnd5eapi.co/api/classes/1")
+    response = u.read()
+    data = json.loads(response)
+    skills = data['proficiency_choices'][0]['from']
+    print(skills)
+    return render_template("dnd.html",
+                            name = data['name'],
+                            health = data['hit_die'],
+                            abilities = skills)
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
