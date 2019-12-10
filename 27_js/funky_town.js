@@ -19,3 +19,10 @@ var gcd = function(x, y){
     return gcd(y, x % y);
   }
 }
+
+var studlist = ["Jeff","Nichol","Jackson","JunTao","Grace","Mr. Mykolyk"]
+
+var randomStudent = function(){
+  var rand = Math.floor(Math.random() * studlist.length);
+  return studlist[rand];
+}
