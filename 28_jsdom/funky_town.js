@@ -39,7 +39,7 @@ var fibbutt = document.getElementById("fib");
 fibbutt.addEventListener('click',randfib);
 
 var randgcd = function(){
-  var num1 = Math.floor(Math.random() * 99999);
+  var num1 = Math.floor(Math.random() * 99);
   var num2 = Math.floor(Math.random() * 99);
   var output = "GCD of " + num1 + " and " + num2 + ": " + gcd(num1,num2);
   document.getElementById("output").innerHTML = output;
