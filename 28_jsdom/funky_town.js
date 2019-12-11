@@ -26,6 +26,8 @@ var randomStudent = function(){
   return studlist[rand];
 }
 
+var randbutt = document.getElementById("randstud");
+console.log(randbutt.addEventListener('click',randomStudent));
 
 
 // document.getElementByID(<ID>)
