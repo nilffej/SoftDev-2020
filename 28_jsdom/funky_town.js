@@ -7,7 +7,6 @@ var fibonacci = function(n){
 }
 
 var gcd = function(x, y){
-  // switches x and y if y > x
   if (y > x){
     var hold = y;
     y = x;
@@ -20,14 +19,38 @@ var gcd = function(x, y){
 }
 
 var studlist = ["Jeff","Nichol","Jackson","JunTao","Grace","Mr. Mykolyk"]
-
 var randomStudent = function(){
-  var rand = Math.floor(Math.random() * studlist.length);
-  return studlist[rand];
+  var rand = studlist[Math.floor(Math.random() * studlist.length)];
+  var output = "Random student: " + rand;
+  console.log(output)
+  document.getElementById("output").innerHTML = output;
+  return rand;
 }
 
+
+
+var randfib = function(){
+  var num = Math.floor(Math.random() * 30);
+  var output = "Number " + num + " in Fibonacci: " + fibonacci(num);
+  document.getElementById("output").innerHTML = output;
+  console.log(output);
+}
+var fibbutt = document.getElementById("fib");
+fibbutt.addEventListener('click',randfib);
+
+var randgcd = function(){
+  var num1 = Math.floor(Math.random() * 99999);
+  var num2 = Math.floor(Math.random() * 99);
+  var output = "GCD of " + num1 + " and " + num2 + ": " + gcd(num1,num2);
+  document.getElementById("output").innerHTML = output;
+  console.log(output);
+}
+var gcdbutt = document.getElementById("gcd");
+gcdbutt.addEventListener('click',randgcd);
+
 var randbutt = document.getElementById("randstud");
-console.log(randbutt.addEventListener('click',randomStudent));
+randbutt.addEventListener('click',randomStudent);
+
 
 
 // document.getElementByID(<ID>)
