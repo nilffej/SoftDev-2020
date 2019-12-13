@@ -56,6 +56,3 @@ var addFib = function() {
 
 butt.addEventListener('click',addItem);
 fibbutt.addEventListener('click', addFib);
-// button.addEventListener('click',
-//   function(e) {console.log(e); }
-// );
