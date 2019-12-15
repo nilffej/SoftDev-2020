@@ -5,43 +5,62 @@
 
   <head>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-      .red   {color : #ff0000;}
-      .green {color : #00ff00;}
-      .blue  { color : #0000ff;}
+      .red   { color : #ff0000; }
+      .green { color : #00ff00; }
+      .blue  { color : #0000ff; }
+      .col-sm { text-align: center; }
+      .row { padding-bottom: 10px; }
     </style>
   </head>
 
-  <body>
-    <h1 id="h" class="blue">Hello World!</h1>
+  <body style="padding: 10px;">
+    <center>
+      <h1 id="h" class="blue">Hello World!</h1>
 
-    <div id="div1" class="green">This is a div</div>
-    <div id="div2">This is a second div</div>
-    <div class="blue">This is a toid div</div>
+      <div id="div1" class="green">This is a div</div>
+      <div id="div2">This is a second div</div>
+      <div class="blue">This is a toid div</div>
 
-    <br>
+      <br>
 
-    <button id="b">The button</button>
-    <button id="fb">fib button</button>
 
-    <ol id="thelist">
-      <li>item 0</li>
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
-      <li>item 4</li>
-      <li>item 5</li>
-      <li>item 6</li>
-      <li>item 7</li>
-    </ol>
 
-    <br>
+    </center>
 
-    <ol id="fiblist">
-    </ol>
+    <div class="container">
+      <div class="row">
+        <div class = "col-sm">
+          <button id="b">The button</button>
+        </div>
+        <div class = "col-sm">
+          <button id="fb">fib button</button>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class = "col-sm">
+          <ol id="thelist">
+            <li>item 0</li>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+            <li>item 7</li>
+          </ol>
+        </div>
+
+        <div class = "col-sm">
+          <ol id="fiblist">
+          </ol>
+        </div>
+
+      </div>
+    </container>
     <script src="dommy.js"></script>
-
   </body>
 
 </html>
