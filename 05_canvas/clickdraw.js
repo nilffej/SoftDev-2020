@@ -1,8 +1,21 @@
 /*
 Jeff Lin
 SoftDev2 PD9
-K04 -- I See a Red Door...
-2020-02-06
+K05 -- ...and I want to Paint It Better
+2020-02-07
+*/
+
+/*
+  e.preventDefault()
+    stops an element from performing its default action
+    Ex: does not let a check box be checked
+  ctx.beginPath()
+    creates a new path for the ctx to draw on
+    if you don't call this after drawing, it will connect different shapes when you fill
+  e.offsetX
+    gives the X coordinate of the mouse based on the padding edge of the target object
+  e.offsetY
+    gives the Y coordinate of the moues based on the padding edge of the target object
 */
 
 var c = document.getElementById("canvas");
