@@ -37,6 +37,7 @@ function draw(event) {
   peepee.arc(x, y, 10, 0, 2 * Math.PI);
   peepee.stroke();
   peepee.fill();
+  peepee.moveTo(x,y)
   if (!first) {
     first = true;
   }
