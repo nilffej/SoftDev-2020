@@ -44,6 +44,7 @@ function draw(event) {
 }
 
 function clear(event) {
+  first = false;
   peepee.clearRect(0,0,c.width,c.height);
 }
 
