@@ -26,17 +26,17 @@ var change = 1;
 // }
 
 function animate(event) {
-  if (!started) {
+  if (started == false) {
     window.requestAnimationFrame(draw);
     started = true;
   }
-  else {
+  if (start == true) {
     started = false;
   }
 }
 
 function draw() {
-  if (!started) { return; }
+  if (started == false) { return; }
   console.log("hello");
   ctx.clearRect(0,0,c.width,c.height);
   ctx.fillStyle = "black";
@@ -52,7 +52,7 @@ function draw() {
 }
 
 function stop(event) {
-  started = !started;
+  started = false;
 }
 
 console.log(canvaspos);
