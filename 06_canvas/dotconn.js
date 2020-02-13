@@ -34,7 +34,7 @@ function draw(event) {
   }
   peepee.fillStyle = "black";
   peepee.beginPath();
-  peepee.arc(x, y, 10, 0, 2 * Math.PI);
+  peepee.arc(x, y, 0, 0, 2 * Math.PI);
   peepee.stroke();
   peepee.fill();
   peepee.moveTo(x,y)
