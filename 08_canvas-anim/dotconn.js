@@ -33,12 +33,13 @@ var started = false;
 var size = 0;
 var change = 1;
 
-var imgx = 20 + Math.floor(Math.random() * (c.width - 40));
-var imgy = 20 + Math.floor(Math.random() * (c.height - 40));
-var dx = 0.5 + Math.random() * 1;
-var dy = 0.5 + Math.random() * 1;
+var imgx = 50 + Math.floor(Math.random() * (c.width - img.width * 0.2 - 200));
+var imgy = 50 + Math.floor(Math.random() * (c.height - img.height * 0.2 - 200));
+var dx = 1 + Math.random() * 1;
+var dy = 1 + Math.random() * 1;
 
 function animate(newmode) {
+  console.log(imgx + " " + imgy);
   console.log(mode + " " + started);
   if (started == false || newmode != mode) {
     mode = newmode;
