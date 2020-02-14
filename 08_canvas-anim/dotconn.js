@@ -33,8 +33,8 @@ var started = false;
 var size = 0;
 var change = 1;
 
-var imgx = Math.floor(Math.random() * c.width);
-var imgy = Math.floor(Math.random() * c.height);
+var imgx = 20 + Math.floor(Math.random() * (c.width - 40));
+var imgy = 20 + Math.floor(Math.random() * (c.height - 40));
 var dx = 0.5 + Math.random() * 1;
 var dy = 0.5 + Math.random() * 1;
 
