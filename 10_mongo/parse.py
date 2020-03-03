@@ -7,15 +7,22 @@ from pprint import pprint
 client = MongoClient()
 db = client["jishwaa"]
 
-file = open("big-bang-theory.json","r")
-dictionary = loads(file.read())
-db.jishwaa.insert_one(dictionary['_embedded']["episodes"])
+def parse():
+	if db.jishwaa.count_documents({}) == 0:
+		file = open("big-bang-theory.json","r")
+		dictionary = loads(file.read())
+		db.jishwaa.insert(dictionary['_embedded']["episodes"])
 
 def getSeason( db, season ):
 	print("Episodes in Season {}:".format(season))
-	info = db.jishwaa.find( {"season": seasob} )
+	info = db.jishwaa.find( {"season": season} )
+	increment = 0
 	for stuff in info:
-		print(stuff["name"])
+		increment += 1
+		print(str(increment) + " - " + stuff["name"])
+
+parse()
+getSeason(db,1)
 
 # def getRestaurantsByZip( db, zip ):
 # 	print("Restaurants with the zipcode of:", zip)
@@ -37,5 +44,3 @@ def getSeason( db, season ):
 # 	print(info)
 # 	for stuff in info:
 # 		print(stuff)
-
-getSeason(db,1)
