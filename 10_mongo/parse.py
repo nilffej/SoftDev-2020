@@ -1,3 +1,18 @@
+# Jeff Lin & Vishwaa Sofat
+# SoftDev PD9
+# K10 -- Import/Export Bank
+# 2020-03-04
+
+# The Big Bang Theory Episodes
+
+# This dataset contains information about the TV show The Big Bang Theory
+# and a list of every episode and their names, broadcasting dates, runtime,
+# plot summaries, and more.
+
+# Our import mechanism reads in the json file containing the dataset and
+# specifically targets where the list of episodes are located in the dataset
+# to insert into the collection.
+
 import pymongo
 
 from pymongo import MongoClient
@@ -16,31 +31,17 @@ def parse():
 def getSeason( db, season ):
 	print("Episodes in Season {}:".format(season))
 	info = db.jishwaa.find( {"season": season} )
-	increment = 0
 	for stuff in info:
-		increment += 1
-		print(str(increment) + " - " + stuff["name"])
+		print(str(stuff["number"]) + " - " + stuff["name"])
+
+def getYear( db, year ):
+	print("Episodes from {}:".format(year))
+	info = db.jishwaa.find( {"airdate": {"$regex": str(year)}} )
+	for stuff in info:
+		print("S{}E{} - ".format(stuff["season"],stuff["number"]) + stuff["name"])
 
 parse()
-getSeason(db,1)
-
-# def getRestaurantsByZip( db, zip ):
-# 	print("Restaurants with the zipcode of:", zip)
-# 	info = db.restaurants.find( {"address.zipcode": zip})
-# 	print(info)
-# 	for stuff in info:
-# 		print(stuff)
-#
-# def getRestaurantsByZipandGrade( db, zip, grade ):
-# 	print("Restaurants with the zipcode and grade:", zip, grade)
-# 	info = db.restaurants.find( {"address.zipcode": zip, "grades.0.grade": grade})
-# 	print(info)
-# 	for stuff in info:
-# 		print(stuff)
-#
-# def getRestaurantsByZipandScore( db, zip, score ):
-# 	print("Restaurants with the zipcode and less score than:", zip, score)
-# 	info = db.restaurants.find( {"address.zipcode": zip, "grades.0.score": {"$lt": int(score)}})
-# 	print(info)
-# 	for stuff in info:
-# 		print(stuff)
+print("The Big Bang Theory - TV Show Dataset\n")
+getSeason(db,7)
+print("")
+getYear(db, 2012)
