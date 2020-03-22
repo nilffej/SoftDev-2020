@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <div>
+        <h3>The Big Bang Theory Episodes</h3>
+        <p style="max-width: 500px;">
+            This dataset contains information about the TV show The Big Bang Theory
+            and a list of every episode and their names, broadcasting dates, runtime,
+            plot summaries, and more.
+            <br><br>
+            Our import mechanism reads in the json file containing the dataset and
+            specifically targets where the list of episodes are located in the dataset
+            to insert into the collection.
+        </p>
+        <p>
+            Inputting a season and/or a year will return data with respective episodes.<br>
+            (Inputs are handled individually. Submiting values for both queries will result in two results.)
+        </p>
+    </div>
+
+    <div>
+        <form action="#" method="POST">
+            <label for="season">Season:</label>
+            <select id="season" name="season">
+                <option></option>
+                {% for n in range(1,13) %}
+                    <option value="option{{n}}">{{n}}</option>
+                {% endfor %}
+            </select>
+            <label for="year" style="padding-left: 100px;">Year:</label>
+            <input id="year" name="year"/>
+            <br><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    {% if seasonlist != None %}
+    <div style='padding-top: 20px;'>
+        <b>Episodes in Season {{ season }}</b><br>
+        {% for item in seasonlist %}
+        E{{ item[0] }} - {{ item[1] }}<br>
+        {% endfor %}
+    </div>
+    {% else %}
+    {% endif %}
+
+    {% if yearlist != None %}
+    <div style='padding-top: 20px;'>
+        <b>Episodes from {{ year }}</b><br>
+        {% for item in yearlist %}
+        S{{ item[0] }}E{{ item[1] }} - {{ item[2] }}<br>
+        {% endfor %}
+    {% else %}
+    </div>
+    {% endif %}
+
+
+</body>
+</html>
