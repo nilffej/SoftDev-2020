@@ -4,6 +4,10 @@ from parse import *
 from pprint import pprint
 app = Flask(__name__)
 
+import os
+DIR = os.path.dirname(__file__) or "."
+DIR += "/"
+
 @app.route("/", methods=['POST', 'GET'])
 def root():
     parse()
