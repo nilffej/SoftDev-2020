@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import urllib.request, json
+import urllib, json
 from parse import *
 from pprint import pprint
 app = Flask(__name__)
@@ -29,5 +29,5 @@ def root():
         yearlist = yearlist)
 
 if __name__ == "__main__":
-    app.debug = True
+    app.debug = False
     app.run()

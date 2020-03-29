@@ -9,7 +9,7 @@
 # to insert into the collection.
 
 import pymongo
-
+from __init__ import *
 from pymongo import MongoClient
 from bson.json_util import loads
 from pprint import pprint
@@ -17,9 +17,13 @@ from pprint import pprint
 client = MongoClient()
 db = client["jishwaa"]
 
+DIR = os.path.dirname(__file__) or "."
+DIR += "/"
+JSON_FILE = DIR + "big-bang-theory.json"
+
 def parse():
 	if db.jishwaa.count_documents({}) == 0:
-		file = open("big-bang-theory.json","r")
+		file = open(JSON_FILE,"r")
 		dictionary = loads(file.read())
 		db.jishwaa.insert(dictionary['_embedded']["episodes"])
 
