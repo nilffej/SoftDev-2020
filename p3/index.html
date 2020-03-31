@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Tahoma, Geneva, sans-serif;
+            padding-left: 20px;
+        }
+        p {
+            max-width: 600px;
+        }
+        h4 {
+            margin-bottom: -5px;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        table {
+            width: 800px;
+        }
+        table, tr, td {
+            /* border: 1px solid black;
+            border-collapse: collapse; */
+            text-align: center;
+            vertical-align: top;
+        }
+        code {
+            font-family: monospace;
+            background-color: lightskyblue;
+            font-size: 15px;
+        }
+        footer {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://phonegap.com/">
+        <h1 style="margin-bottom: 5px;">PhoneGap</h1>
+        <div style="color: gray;">Click for official homepage</div>
+    </a>
+
+    <p>
+        Formerly known as Apache Cordova, PhoneGap is a framework that enables mobile 
+        app development using HTML, CSS, and Javascript.<br>
+
+        <img src="images/buildbot.png" style="max-width: 150px; padding-top: 20px; display: block; margin: 0 auto;">
+    </p>
+    
+    <h4>Why use PhoneGap?</h4>
+    <ul style="list-style-type:disc;">
+        <li>Uses commonly known languages</li>
+        <li>Creates cross-platform applications: Android, iOS, Windows</li>
+        <li>Offers a native app experience</li>
+        <li>It's capable of implementing native device tech (i.e. camera, contacts, push notifications)</li>
+    </ul>
+
+    <h4>PhoneGap is for you if...</h4>
+    <ul style="list-style-type:disc;">
+        <li>you're looking to create simple mobile web apps.</li>
+        <li>you're looking to be time and cost efficient.</li>
+        <li>want an easily deployable product.</li>
+    </ul>
+
+    <h4>Disadvantages</h4>
+    <ul style="list-style-type:disc;">
+        <li>iOS development requires iOS Developer membership</li>
+        <li>Unfit for gaming apps</li>
+    </ul>
+
+    <div style="padding-top: 10px;">
+        <table>
+            <tr><td colspan="2"><div style="padding-bottom: 10px;"></div>
+                PhoneGap Apps
+            </div></td></tr>
+            <tr>
+                <td>
+                    <img src="images/wikipedia.png" style="max-height: 200px;"><br>
+                    <div>Wikipedia</div>
+                </td>
+                <td>
+                    <img src="images/tripadvisor.png" style="max-height: 200px;"><br>
+                    <div>TripAdvisor</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 style="padding-top: 20px;">Building a PhoneGap Application</h2>
+    <table>
+        <tr>
+            <td>
+                <a href="https://phonegap.com/">
+                    <img src="images/homepage.png" style="max-height: 200px;"><br>
+                    <div>Homepage</div>
+                </a>
+            </td>
+            <td>
+                <a href="http://docs.phonegap.com/getting-started/">
+                    <img src="images/documentation.png" style="max-height: 200px;"><br>
+                    <div>Documentation</div>
+                </a>
+                <div style="padding-top: 5px;">An official walkthrough of how to set up Adobe PhoneGap can be found on their documentation website.</div>
+            </td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            There are two methods of interacting with PhoneGap on your desktop.<br>
+            The <b>Desktop App</b> provides a more visual UI. The <b>Command Line Interface</b> is for those who prefer to work from the command line.
+        </div></td></tr>
+
+        <tr>
+            <td>
+                <img src="images/desktopapp.png" style="max-height: 300px;"><br>
+                <div>Desktop App</div>
+            </td>
+            <td>
+                <img src="images/cli.png" style="max-height: 250px;"><br>
+                <div>Command Line Interface</div>
+            </td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            The mobile companion app is called <a href="https://play.google.com/store/apps/details?id=com.adobe.phonegap.app"><b>PhoneGap Developer</b></a>.<br>
+            It is available in Google Play Store, but not in the App Store. The app allows you to load and debug from your mobile device and does not require a wired connection to your computer.
+        </div></td></tr>
+
+        <tr>
+            <td>
+                <a href="https://play.google.com/store/apps/details?id=com.adobe.phonegap.app">
+                    <img src="images/playstore.png" style="max-height: 300px;"><br>
+                    <div>PhoneGap Developer in <b>Google Play Store</b></div>
+                </a>
+            </td>
+            <td>
+                <img src="images/apppic1.png" style="max-height: 300px;"><br>
+                <div>PhoneGap Developer</div>
+            </td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            There are numerous templates to choose from to begin your PhoneGap project.<br>
+            The command <code>$ phonegap template list</code> will return each template's name and its description.
+        </div></td></tr>
+
+        <tr><td colspan="2">
+            <img src="images/templates.png" style="max-height: 350px;">
+        </td></tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            In this walkthrough, we are starting a new <b>blank</b> project.<br>
+            The command <code>$ phonegap create myApp --template blank</code> will create a new project with the template <b>blank</b>. Below is how the project may first appear in your IDE. The HTML file from which we will be working is located in the www/ directory.
+        </div></td></tr>
+
+        <tr><td colspan="2">
+            <img src="images/initialproj.png" style="max-height: 350px;">
+        </td></tr>
+        
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            The command <code>$ phonegap serve</code> starts a local server on your network to which you can connect to from a browser using the address returned in the terminal. A first launch may appear as shown below.
+        </div></td></tr>
+
+        <tr>
+            <td>
+                <img src="images/serve.png" style="max-height: 225px;">
+            </td>
+            <td>
+                <img src="images/firstserve.png" style="max-height: 225px;"><br>
+            </td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            You can also establish a connection from the PhoneGap Developer app to demo your app on your mobile device.
+        </div></td></tr>
+        
+        <tr>
+            <td colspan="2">
+                <img src="images/apppic2.png" style="max-height: 300px; padding: 0px 40px 0px 40px;">
+                <img src="images/apppic3.png" style="max-height: 300px; padding: 0px 40px 0px 40px;">
+                <img src="images/apppic4.png" style="max-height: 300px; padding: 0px 40px 0px 40px;">
+            </td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            To compile and officially launch your app, you must first visit the <a href="https://build.phonegap.com/"><b>Adobe PhoneGap Build</b></a> website and create an account. After logging, you will be redirected to a site that appears as below.
+        </div></td></tr>
+
+        <tr>
+            <td><a href="https://build.phonegap.com/">
+                <img src="images/phonegapbuild1.png" style="max-height: 200px;">
+            </a></td>
+            <td><a href="https://build.phonegap.com/">
+                <img src="images/phonegapbuild2.png" style="max-height: 200px;"><br>
+            </a></td>
+        </tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            To upload your app to Adobe PhoneGap Build, you can either upload a zip folder of your project or connect your project via a GitHub HTTPS link. The advantage of using a GitHub connection is you can update your project on Adobe PhoneGap Build with a single button.
+        </div></td></tr>
+
+        <tr><td colspan="2">
+            <img src="images/phonegapbuild3.png" style="max-height: 350px;">
+        </td></tr>
+
+        <tr><td colspan="2"><div style="padding: 30px 10px 20px 10px;">
+            Your app can then be exported from the website as a downloadable and installable file. For Android devices, the file format will be an APK. Opening the APK file on an Android device will prompt the installation of the app.
+        </div></td></tr>
+    </table>
+
+    <footer><div style="padding: 15px;">Presentation by Jeff Lin</div></footer>
+</body>
+</html>
