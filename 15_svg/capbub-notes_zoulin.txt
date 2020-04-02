@@ -1,0 +1,41 @@
+Jeff Lin
+SoftDev PD9
+K15 -- Capture Bubble Toil Trouble
+2020-04-02
+
+1
+----- Predictions -----
+HTML file contains a table
+An alert will come up with what's inside a cell when clicked
+----- Observations -----
+Behaves as expected
+Wondering how to change the alert title from "This page says"
+
+2
+----- Predictions -----
+HTML file contains a table
+Multiple alerts may come up since both rows and cells have event listeners
+Clicking row might show all contents of row in single alert
+I think the individual cell alert might take precedence over row alert
+----- Obervations -----
+Behaved as expected
+Overlooked the whole table event listener
+Also overlooked that the alert message would be actual HTML, did not pay attention to the innerHTML property
+Messages appear in the order the event listeners are added
+
+3
+----- Predictions -----
+HTML file contains a table
+Uncommenting might stop following alerts
+----- Observations -----
+Overlooked the true parameter in table event listener
+True argument appears to give it order priority
+Uncommenting prediction is correct
+
+4
+----- Predictions -----
+Order of event listeners does matter based on previous tests
+Making a guess that since all event listeners have received the true argument, alerts might print reversed
+Thinking stop propogation will still cut off alerts after one
+----- Observations -----
+Predictions were correct
