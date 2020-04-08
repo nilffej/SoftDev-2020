@@ -1,0 +1,41 @@
+Line below imports script to HTML:
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+D3
+- uses data to modify DOMs to create visual representations quickly.
+- gives quick and less verbose access to elements.
+    selectAll("p") or select("body")
+- functions of data
+    ( function() { return _____ } )
+    - data in an array is passed as first argument (d) to functions
+        d3.selectAll("p")
+            .data([4, 8, 15, 16, 23, 42])
+                .style("font-size", function(d) { return d + "px"; });
+- enter and exiting allows adding/removing nodes according to data
+    - if enter/exit not specified, only existing nodes modified
+    TWO STYLES:
+    ----- ONE -----
+        d3.select("body")
+            .selectAll("p")
+            .data([4, 8, 15, 16, 23, 42])
+            .enter().append("p")
+                .text(function(d) { return "I’m number " + d + "!"; });
+    ----- TWO -----
+        // Update…
+        var p = d3.select("body")
+        .selectAll("p")
+        .data([4, 8, 15, 16, 23, 42])
+            .text(function(d) { return d; });
+        // Enter…
+        p.enter().append("p")
+            .text(function(d) { return d; });
+        // Exit…
+        p.exit().remove();
+    - second style allows for more control/specificity on entering/exiting bars
+- transitions give more visual to page
+    d3.select("body").transition()
+        .style("background-color", "black");
+
+By Example
+- Oveservable JavaScript allows for import of visuals (i.e. histogram)
+    import {chart as chart1} from @d3/histogram
