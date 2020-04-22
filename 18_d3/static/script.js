@@ -14,33 +14,22 @@ var svg = d3.select("#pie")
     .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-// create 2 data_set
-// JACKSON WORK HERE
+
+var legendsvg = d3.select("#legend")
+    .append("svg")
+        .attr("width", 450)
+        .attr("height", 600)
 
 var getinfo = document.getElementById("info")
 info = JSON.parse(getinfo.innerHTML)
 getinfo.innerHTML = ""
-//console.log(info)
 
-var jacksonset = {}
-jacksonset["2007"] = info["2007"]
-jacksonset["2008"] = info["2008"]
-jacksonset["2009"] = info["2009"]
-jacksonset["2010"] = info["2010"]
-jacksonset["2011"] = info["2011"]
-jacksonset["2012"] = info["2012"]
-jacksonset["2013"] = info["2013"]
-jacksonset["2014"] = info["2014"]
-console.log(jacksonset)
+var datasets = []
+for (var i = 0; i <= 18; i++){
+    var year = (1999 + i).toString()
+    datasets.push(info[year])
+}
 
-var data1 = {a: 9, b: 20, c:30, d:8, e:12}
-var data2 = {a: 6, b: 16, c:20, d:14, e:19, f:12}
-
-var datasets = [data1, data2]
-var index = 0
-var index = 0
-
-var index = 0
 function rangecolors(num){
     var colorlist = []
     for (var i = 0; i < num; i++){
@@ -49,6 +38,7 @@ function rangecolors(num){
     return colorlist
 }
 
+var index = 0
 // A function that create / update the plot for a given variable:
 function update(data) {
     if (index == datasets.length) {
@@ -63,7 +53,32 @@ function update(data) {
         .domain(keys)
         .range(rangecolors(keys.length));
 
-    document.getElementById("year").innerHTML = 2069
+    document.getElementById("year").innerHTML = 1999 + index;
+
+    legendsvg.selectAll("*").remove()
+    legendlabels = []
+    for (var i = 0; i < keys.length; i++){
+        legendlabels.push(keys[i].concat(" - ",data[keys[i]]))
+    }
+    legendsvg.selectAll("mydots")
+        .data(keys)
+        .enter()
+        .append("circle")
+            .attr("cx", 100)
+            .attr("cy", function(d,i){ return 100 + i*40}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("r", 7)
+            .style("fill", function(d){ return color(d)})
+    legendsvg.selectAll("mylabels")
+        .data(legendlabels)
+        .enter()
+        .append("text")
+            .attr("x", 120)
+            .attr("y", function(d,i){ return 100 + i*40}) // 100 is where the first dot appears. 25 is the distance between dots
+            .style("fill", function(d){ return color(d)})
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .attr("font-size","20px")
 
     // Compute the position of each group on the pie:
     var pie = d3.pie()
@@ -97,4 +112,4 @@ function update(data) {
 }
 
 update(datasets[0])
-var gogo = setInterval(function() { update(datasets[index]) }, 3000)
+var gogo = setInterval(function() { update(datasets[index]) }, 2000)

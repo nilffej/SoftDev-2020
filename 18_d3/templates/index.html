@@ -2,23 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NYC Leading Causes of Death</title>
+    <title>Leading Causes of Death</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body style="padding: 20px">
-    <h2>NYC Leading Causes of Death</h2>
+    <h2>America's Leading Causes of Death in NYC</h2>
+    <p>
+        The <a href="https://www.cdc.gov/nchs/index.htm">National Center for Health Statistics</a> at the CDC lists these ten causes of death below as the Leading Causes of Death in the United States.<br><br>
+        This animated pie chart visualizes the change in proportion of deaths by these causes in New York from 1999 to 2017.<br>
+        The whole represents only the deaths that these causes are responsible for and they exclude all other causes of death.
+    </p>
 
-    <div class="text-center" id="stuff" style="margin: 40px 0px 40px 0px;">
-        <h3 id="year"></h3>
-        <div id="pie"></div>
-        <div>
-            <svg id="key" height=300 width=450></svg>
+    <div class="container" style="padding-top: 20px;">
+        <div class="row" id="stuff">
+            <div class="col text-center">
+                <h3 id="year"></h3>
+                <div id="pie"></div>
+            </div>
+            <div class="col">
+                <div id="legend"></div>
+            </div>
         </div>
     </div>
 
     <p id="info"> {{info}} </p>
 
-    <footer><a href="https://catalog.data.gov/dataset/new-york-city-leading-causes-of-death-ce97f">Original Dataset</a></footer>
+    <footer class="text-center">
+        By Jeff Lin and Jackson Zou
+        <a href="https://www.cdc.gov/nchs/data-visualization/mortality-leading-causes/index_2.htm">Original Dataset</a>
+    </footer>
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
