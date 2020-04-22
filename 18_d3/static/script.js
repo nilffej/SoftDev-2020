@@ -16,12 +16,31 @@ var svg = d3.select("#pie")
 
 // create 2 data_set
 // JACKSON WORK HERE
+
+var getinfo = document.getElementById("info")
+info = JSON.parse(getinfo.innerHTML)
+getinfo.innerHTML = ""
+//console.log(info)
+
+var jacksonset = {}
+jacksonset["2007"] = info["2007"]
+jacksonset["2008"] = info["2008"]
+jacksonset["2009"] = info["2009"]
+jacksonset["2010"] = info["2010"]
+jacksonset["2011"] = info["2011"]
+jacksonset["2012"] = info["2012"]
+jacksonset["2013"] = info["2013"]
+jacksonset["2014"] = info["2014"]
+console.log(jacksonset)
+
 var data1 = {a: 9, b: 20, c:30, d:8, e:12}
 var data2 = {a: 6, b: 16, c:20, d:14, e:19, f:12}
 
 var datasets = [data1, data2]
 var index = 0
+var index = 0
 
+var index = 0
 function rangecolors(num){
     var colorlist = []
     for (var i = 0; i < num; i++){
@@ -43,7 +62,7 @@ function update(data) {
     var color = d3.scaleOrdinal()
         .domain(keys)
         .range(rangecolors(keys.length));
-    
+
     document.getElementById("year").innerHTML = 2069
 
     // Compute the position of each group on the pie:
@@ -73,7 +92,7 @@ function update(data) {
 
     // remove the group that is not present anymore
     u.exit().remove()
-    
+
     index += 1
 }
 
